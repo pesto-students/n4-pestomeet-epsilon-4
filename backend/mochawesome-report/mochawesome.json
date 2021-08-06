@@ -1,0 +1,1211 @@
+{
+  "stats": {
+    "suites": 29,
+    "tests": 30,
+    "passes": 30,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-08-04T22:17:32.628Z",
+    "end": "2021-08-04T22:18:34.654Z",
+    "duration": 62026,
+    "testsRegistered": 30,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "9175e671-1b70-4a0b-8316-4b99a6789526",
+      "title": "",
+      "fullFile": "",
+      "file": "",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "8f554050-6f29-4ffe-8186-063c8da9461e",
+          "title": "Book Event Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\bookevent-test.js",
+          "file": "\\test\\bookevent-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should send success message for event creation",
+              "fullTitle": "Book Event Route Testing should send success message for event creation",
+              "timedOut": false,
+              "duration": 1926,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let eventId=\"c602698f-7567-4804-99cc-5e170d9d49ce\"\nchai.request(host).post('/api/pesto/book/event/'+eventId)\n    .send({\n        \"hasBooked\":true,\n        \"attendees\":[]\n        })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Event Booked Successfully\",\"Couldn't Find the Event\",\"Update Failed ! Please Try Again\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "283b573a-d669-4b21-b5f7-bb7bddff8793",
+              "parentUUID": "8f554050-6f29-4ffe-8186-063c8da9461e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "283b573a-d669-4b21-b5f7-bb7bddff8793"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1926,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "a8a19ca5-cb87-4608-99aa-3c559b54c9be",
+          "title": "Create Assignment Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\createassignment-test.js",
+          "file": "\\test\\createassignment-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should send Success message for assignment creation",
+              "fullTitle": "Create Assignment Route Testing should send Success message for assignment creation",
+              "timedOut": false,
+              "duration": 1543,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai.request(host).post('/api/pesto/create/assignment')\n    .send({\n    \"assignmentLinks\":[\"https://dashboard.heroku.com/apps/pestomeet-backend/logs\",\"https://github.com/dinesh2014/pestomeet/blob/Staging/assignment/schema/assignment-schema.ts\"],\n    \"assignmentName\":\"Test Assignment\",\n    \"uploaderId\":\"d0916711-3962-4758-9dbc-f04c7bdb601e\",\n    \"eventID\":\"3cb919c6-fb15-4dc9-a747-088e03744476\"\n    })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Error Happened while submitting assignment, Try Again !\",\"Assignment Submitted Successfully\",\"Assignment is already submitted\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "11d4f691-2c07-4305-b96e-928b4028f4e0",
+              "parentUUID": "a8a19ca5-cb87-4608-99aa-3c559b54c9be",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "11d4f691-2c07-4305-b96e-928b4028f4e0"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1543,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "333a07dc-0ae0-47ce-88ed-b97245ea82bd",
+          "title": "Create batch Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\createbatch-test.js",
+          "file": "\\test\\createbatch-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should send Success message for batch creation",
+              "fullTitle": "Create batch Route Testing should send Success message for batch creation",
+              "timedOut": false,
+              "duration": 1920,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai.request(host).post('/api/pesto/create/batch')\n    .send({\n        \"batchMembers\":[{\n          \"name\":\"dinesh anbumani\",\n          \"email\":\"dinesh2014@gmail.com\",\n          \"phone\":9600999098,\n          \"role\":\"student\",   \n          \"experience\":\"10\",\n          \"approval\":\"inprogress\"\n        }],\n        \"batchName\":\"ninja-04\",\n        \"batchType\":\"ninja\",\n        \"batchOwner\":\"apurva wadekar\",\n        \"batchOwnerID\":\"09b98fd3-a297-4459-998b-bcaf4f237549\"\n        })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Batch Created Successfully\",\"Batch name is already taken\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "ff07a149-ba32-48b3-9b09-0b11ac031dbc",
+              "parentUUID": "333a07dc-0ae0-47ce-88ed-b97245ea82bd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "ff07a149-ba32-48b3-9b09-0b11ac031dbc"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1920,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2098900a-1f95-4dee-b104-4999da6cd2d6",
+          "title": "Create Event Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\createevent-test.js",
+          "file": "\\test\\createevent-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should send success message for event creation",
+              "fullTitle": "Create Event Route Testing should send success message for event creation",
+              "timedOut": false,
+              "duration": 1499,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai.request(host).post('/api/pesto/create/event')\n    .send({\n    \"eventName\":\"Event-04\",\n    \"eventDescription\":\"Event Description\",\n    \"eventType\":\"masterclass\",\n    \"eventColor\":\"#1890FF\",\n    \"eventStart\":\"2021-07-25T10:00:53.442Z\",\n    \"eventEnd\":\"2021-07-25T11:00:53.442Z\",\n    \"organiserId\":\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\",\n    \"organiserName\":\"Pesto Admin\",\n    \"hasAssignment\":true,\n    \"attendees\":[{\"batchId\":\"614853b3-7a62-4810-863a-29b26c6810ad\"},{\"batchId\":\"69d1a1fe-bf6d-4226-a8f1-551e5c7fe032\"}]\n    })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Event created Successfully\",\"Event is already Scheduled\",\"Error Happened while creating Event, Try Again !\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "33339d6d-4e76-44ff-ae28-75c36c72a79f",
+              "parentUUID": "2098900a-1f95-4dee-b104-4999da6cd2d6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "33339d6d-4e76-44ff-ae28-75c36c72a79f"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1499,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "d1d9c18f-3d70-4840-9d48-13178d1da5e6",
+          "title": "Create Resource Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\createresource-test.js",
+          "file": "\\test\\createresource-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should send Success message for Resource Upload",
+              "fullTitle": "Create Resource Route Testing should send Success message for Resource Upload",
+              "timedOut": false,
+              "duration": 11618,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai.request(host).post('/api/pesto/resource/upload')\n    .field({\n        'resourceName': 'Masterclass-05',\n        'uploaderId': 'a6c949f5-97e2-4f51-9311-53c814f659fd',\n        'eventId': '1ce751aa-152d-4a1c-8401-3ef77d06c720',\n        'eventType': 'SomeEventType',\n    })\n    .attach( 'resource',\"C:/Users/91960/Downloads/yt1s.com - LANKYBOX TRADING  shorts.mp4\")\n    .set({\"Content-Type\":\" multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Error Happened while uploading resources, Try Again !\",\"Update Failed ! Please Try Again\",\"Couldn't Find the Event\",\"Resource Uploaded Successfully\",\"Resource already found\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "f60762fa-d000-4404-85f0-67851dae5b27",
+              "parentUUID": "d1d9c18f-3d70-4840-9d48-13178d1da5e6",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "f60762fa-d000-4404-85f0-67851dae5b27"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 11618,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "15f240b3-5cfa-4389-a41f-9478d3bcd58d",
+          "title": "Create Team Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\createteam-test.js",
+          "file": "\\test\\createteam-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should send Success message for team creation",
+              "fullTitle": "Create Team Route Testing should send Success message for team creation",
+              "timedOut": false,
+              "duration": 1800,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai.request(host).post('/api/pesto/create/team')\n    .send({\n        \"teamName\":\"Team Epsilon 001\",\n        \"batchId\":\"9e00eef1-f5f2-43d8-bd2f-8b2b5ae101a0\",\n        \"batchOwnerID\":\"9e00eef1-f5f2-43d8-bd2f-8b2b5ae101a0\",\n        \"teamType\":\"mentor\",\n        \"mentorId\":\"8aee5a6a-3f43-4722-98ae-5bd3375c0715\",\n        \"mentorName\":\"test\",\n        \"teamMembers\":[{\"id\":\"ApurvaID\" ,\"name\":\"Apurva\"},{\"id\":\"subrataID\",\"name\":\"subrata\"}]\n        })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Team Registered Successfully\",\"Team name is already taken\",\"Error Happened while registering Team, Try Again\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "e5ecd419-13fe-480a-8c2d-879aa6c6a68a",
+              "parentUUID": "15f240b3-5cfa-4389-a41f-9478d3bcd58d",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "e5ecd419-13fe-480a-8c2d-879aa6c6a68a"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1800,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9b5182f5-3ca2-4ccb-9240-3828a6200324",
+          "title": "Delete Assignment Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\deleteassignment-test.js",
+          "file": "\\test\\deleteassignment-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete assignment for given assignment id",
+              "fullTitle": "Delete Assignment Route Testing should delete assignment for given assignment id",
+              "timedOut": false,
+              "duration": 1535,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let assignment =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).delete('/api/pesto/delete/assignment/'+assignment)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Error while deleting Assignment\",\"Assignment Not Found\",\"Assignment deleted successfully\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "324569e5-7919-449b-b23b-d57eb296c02e",
+              "parentUUID": "9b5182f5-3ca2-4ccb-9240-3828a6200324",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "324569e5-7919-449b-b23b-d57eb296c02e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1535,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "97bb934e-45af-467d-98c8-9e44f211e14f",
+          "title": "Delete Batch Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\deletebatch-test.js",
+          "file": "\\test\\deletebatch-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete batch for given batch id",
+              "fullTitle": "Delete Batch Route Testing should delete batch for given batch id",
+              "timedOut": false,
+              "duration": 1760,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let batch =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).delete('/api/pesto/delete/batch/'+batch)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"batch deleted successfully\",\"batch Not Found\",\"Error while deleting batch\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "92b9b300-3ee5-4fd3-9be4-77fc6150cd2e",
+              "parentUUID": "97bb934e-45af-467d-98c8-9e44f211e14f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "92b9b300-3ee5-4fd3-9be4-77fc6150cd2e"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1760,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "73913bd5-582b-4605-ad46-b94f04475f46",
+          "title": "Delete event Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\deleteevent-test.js",
+          "file": "\\test\\deleteevent-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete team for given team id",
+              "fullTitle": "Delete event Route Testing should delete team for given team id",
+              "timedOut": false,
+              "duration": 1524,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let team =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).delete('/api/pesto/delete/event/'+team)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Event deleted successfully\",\"Event Not Found\",\"Error while deleting event\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "6f286afb-a83c-459e-bed2-7346747542a4",
+              "parentUUID": "73913bd5-582b-4605-ad46-b94f04475f46",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "6f286afb-a83c-459e-bed2-7346747542a4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1524,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "53d8d2c6-91d9-4640-bb9c-6868bf4ea6f8",
+          "title": "Delete Resource Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\deleteresource-test.js",
+          "file": "\\test\\deleteresource-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete Resource for given Resource id",
+              "fullTitle": "Delete Resource Route Testing should delete Resource for given Resource id",
+              "timedOut": false,
+              "duration": 1470,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let resourceID =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).delete('/api/pesto/resource/delete/'+resourceID)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Error while deleting Resource\",\"Resource Not Found\",\"Update Failed ! Please Try Again\",\"Couldn't Find the Event\",\"Resource Deleted Successfully\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "838af99d-015e-4d9b-9dbd-5e3b86d9caac",
+              "parentUUID": "53d8d2c6-91d9-4640-bb9c-6868bf4ea6f8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "838af99d-015e-4d9b-9dbd-5e3b86d9caac"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1470,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "df180fcd-d2e5-4e00-9e26-0722abef7b47",
+          "title": "Delete team Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\deleteteam-test.js",
+          "file": "\\test\\deleteteam-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete team for given team id",
+              "fullTitle": "Delete team Route Testing should delete team for given team id",
+              "timedOut": false,
+              "duration": 1397,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let team =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).delete('/api/pesto/delete/team/'+team)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Team deleted successfully\",\"Team Not Found\",\"Error while deleting User\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "b4f1fcbe-be9b-4f11-9254-d71a56429b88",
+              "parentUUID": "df180fcd-d2e5-4e00-9e26-0722abef7b47",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "b4f1fcbe-be9b-4f11-9254-d71a56429b88"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1397,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "7bd175df-a6e6-4aa1-a95d-a85367c71ed7",
+          "title": "Delete User Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\deleteuser-test.js",
+          "file": "\\test\\deleteuser-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should delete user for given user id",
+              "fullTitle": "Delete User Route Testing should delete user for given user id",
+              "timedOut": false,
+              "duration": 1528,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let user =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).delete('/api/pesto/delete/user/'+user)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"User deleted successfully\",\"User Not Found\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "defc48f2-e927-42d2-8592-0654086c26df",
+              "parentUUID": "7bd175df-a6e6-4aa1-a95d-a85367c71ed7",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "defc48f2-e927-42d2-8592-0654086c26df"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1528,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9e2033d6-befd-46bc-bf33-14282e31ffab",
+          "title": "Edit Batch Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\editbatch-test.js",
+          "file": "\\test\\editbatch-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should edit batch for given batch id",
+              "fullTitle": "Edit Batch Route Testing should edit batch for given batch id",
+              "timedOut": false,
+              "duration": 2294,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let batch =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).patch('/api/pesto/edit/batch/'+batch)\n    .send({\n        \"batchMembers\":[{\n          \"name\":\"dinesh anbumani\",\n          \"email\":\"dinesh2014@gmail.com\",\n          \"phone\":9600999098,\n          \"role\":\"student\",   \n          \"experience\":\"10\",\n          \"approval\":\"inprogress\"\n        }],\n        \"batchName\":\"ninja-04\",\n        \"batchType\":\"ninja\",\n        \"batchOwner\":\"apurva wadekar\",\n        \"batchOwnerID\":\"09b98fd3-a297-4459-998b-bcaf4f237549\"\n        })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Batch updated successfully\",\"Couldn't Find the Batch\",\"Update Failed ! Please Try Again\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "9b6a3ee5-a4dc-4dbe-a8d0-c5a1c7398926",
+              "parentUUID": "9e2033d6-befd-46bc-bf33-14282e31ffab",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9b6a3ee5-a4dc-4dbe-a8d0-c5a1c7398926"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2294,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "620591ec-8ecf-4383-8a13-8e9cd2e2c511",
+          "title": "Edit Events Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\editevent-test.js",
+          "file": "\\test\\editevent-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should edit events for given event id",
+              "fullTitle": "Edit Events Route Testing should edit events for given event id",
+              "timedOut": false,
+              "duration": 2025,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let event =\"1ce751aa-152d-4a1c-8401-3ef77d06c720\"\nchai.request(host).patch('/api/pesto/edit/event/'+event)\n    .send({\"attendees\":[{\"batchId\":\"89865d42-62f0-43ff-87bd-ea352057aa18\"}],\n    \"eventName\":\"Changed Event in Heroku\",\n    \"eventType\":\"masterclass\",\n    \"eventStart\":\"2021-08-01T04:00:40.000Z\",\n    \"eventEnd\":\"2021-08-01T05:00:40.000Z\",\n    \"eventColor\":\"#1890FF\",\n    \"eventDescription\":\"New Event Description\",\n    \"hasAssignment\":true,\n    \"organiserId\":\"d0916711-3962-4758-9dbc-f04c7bdb601e\"\n   })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Event Updated Successfully\",\"Couldn't Find the Event\",\"Update Failed ! Please Try Again\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "20601c27-e295-4a29-88e5-3018189cd55c",
+              "parentUUID": "620591ec-8ecf-4383-8a13-8e9cd2e2c511",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "20601c27-e295-4a29-88e5-3018189cd55c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2025,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "598fda26-c3b1-44e1-99e5-10d410326e07",
+          "title": "Edit Batch Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\editteam-test.js",
+          "file": "\\test\\editteam-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should edit batch for given batch id",
+              "fullTitle": "Edit Batch Route Testing should edit batch for given batch id",
+              "timedOut": false,
+              "duration": 1475,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let team =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).patch('/api/pesto/edit/team/'+team)\n    .send({\n        \"teamName\":\"Team Epsilon 001\",\n        \"batchId\":\"9e00eef1-f5f2-43d8-bd2f-8b2b5ae101a0\",\n        \"batchOwnerID\":\"9e00eef1-f5f2-43d8-bd2f-8b2b5ae101a0\",\n        \"teamType\":\"mentor\",\n        \"mentorId\":\"8aee5a6a-3f43-4722-98ae-5bd3375c0715\",\n        \"mentorName\":\"test\",\n        \"teamMembers\":[{\"id\":\"ApurvaID\" ,\"name\":\"Apurva\"},{\"id\":\"subrataID\",\"name\":\"subrata\"}]\n        })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Team Updated Successfully\",\"Couldn't Find the Team\",\"Update Failed ! Please Try Again\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "00b9fd82-3bd7-4897-85dd-a419748901f3",
+              "parentUUID": "598fda26-c3b1-44e1-99e5-10d410326e07",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "00b9fd82-3bd7-4897-85dd-a419748901f3"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1475,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "0b0a03da-5a23-4967-aa4c-99f777718989",
+          "title": "Edit User Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\edituser-test.js",
+          "file": "\\test\\edituser-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should edit user for given user id",
+              "fullTitle": "Edit User Route Testing should edit user for given user id",
+              "timedOut": false,
+              "duration": 1451,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let user =\"d9b7c387-e81d-4d84-9a61-5a8b3d34fcd6\"\nchai.request(host).patch('/api/pesto/edit/user/'+user)\n    .send({\n    \"name\":\"student two\",\n    \"email\":\"studenttwo@student.com\",\n    \"phone\":9600999876,\n    \"password\":\"Dummy Password\",\n    \"role\":\"student\",\n    \"experience\":\"10\",\n    \"approval\":\"In-Progress\"\n    })\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Status Updated Successfully\",\"Couldn't Find the user\",\"Update Failed ! Please Try Again\"]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "4752ba9d-6de3-494f-a02e-52999025ad02",
+              "parentUUID": "0b0a03da-5a23-4967-aa4c-99f777718989",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "4752ba9d-6de3-494f-a02e-52999025ad02"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1451,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "58fcc9c7-c2a6-437f-8de2-addcd86b889f",
+          "title": "List All User Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listalluser-test.js",
+          "file": "\\test\\listalluser-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list all registered user",
+              "fullTitle": "List All User Route Testing should list all registered user",
+              "timedOut": false,
+              "duration": 1462,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let status = \"approved\"\nlet role=\"mentor\"\nlet regex=/[0-10000] users reterived/\nchai.request(host).get('/api/pesto/list/user/all')\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.match(regex)\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "0c63f39c-7b58-440d-9735-bae3f092bfa1",
+              "parentUUID": "58fcc9c7-c2a6-437f-8de2-addcd86b889f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0c63f39c-7b58-440d-9735-bae3f092bfa1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1462,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "8338a18e-fa6d-42ee-bbc0-e54b8d84e99e",
+          "title": "List my batch Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listamybatch-test.js",
+          "file": "\\test\\listamybatch-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list batch associated to the user id",
+              "fullTitle": "List my batch Route Testing should list batch associated to the user id",
+              "timedOut": false,
+              "duration": 1743,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let user = \"09b98fd3-a297-4459-998b-bcaf4f237549\"\nchai.request(host).get('/api/pesto/list/mybatch/'+user)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Batches Reterived\",\"Batch Reterived\",\"No Batch Found\",\"Not Applicable for Mentors\",\"Not Applicable for Students\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "06702d90-f290-4dfc-8b85-6eacb5d7a53d",
+              "parentUUID": "8338a18e-fa6d-42ee-bbc0-e54b8d84e99e",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "06702d90-f290-4dfc-8b85-6eacb5d7a53d"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1743,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "0dc39a05-3d7d-4213-b9cc-442d16784dcd",
+          "title": "List Assignment Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listassignment-test.js",
+          "file": "\\test\\listassignment-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list assignment by eventID",
+              "fullTitle": "List Assignment Route Testing should list assignment by eventID",
+              "timedOut": false,
+              "duration": 1580,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let eventID = \"3cb919c6-fb15-4dc9-a747-088e03744476\"\nlet regex=/[0-900] ninja Batches Found/\nchai.request(host).get('/api/pesto/list/assignment/'+eventID)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.contain.oneOf([\"Error while reteriving assignment\",\"No assignment available for the event\",\" Assignment available for the event \"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "1d177935-24e1-4d82-bd71-a240c9a399b5",
+              "parentUUID": "0dc39a05-3d7d-4213-b9cc-442d16784dcd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "1d177935-24e1-4d82-bd71-a240c9a399b5"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1580,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "db12b113-2c1b-4061-904b-3353191e8d30",
+          "title": "List Batch Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listbatch-test.js",
+          "file": "\\test\\listbatch-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list batch by its type",
+              "fullTitle": "List Batch Route Testing should list batch by its type",
+              "timedOut": false,
+              "duration": 1924,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let type = \"ninja\"\nlet regex=/[0-900] ninja Batches Found/\nchai.request(host).get('/api/pesto/list/batch/'+type)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.match(regex)\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "50bdfda1-ace5-4b4f-bff5-47321428faf4",
+              "parentUUID": "db12b113-2c1b-4061-904b-3353191e8d30",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "50bdfda1-ace5-4b4f-bff5-47321428faf4"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1924,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "aa251ea1-0753-4570-9fd7-e177d8c171d8",
+          "title": "List Event Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listevent-test.js",
+          "file": "\\test\\listevent-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list event by its type",
+              "fullTitle": "List Event Route Testing should list event by its type",
+              "timedOut": false,
+              "duration": 1711,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let type = \"masterclass\"\nlet regex=/[0-900] masterclass Event Found/\nchai.request(host).get('/api/pesto/list/event/'+type)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.match(regex)\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "2f0c2501-88e5-4882-bd91-78040501c7a8",
+              "parentUUID": "aa251ea1-0753-4570-9fd7-e177d8c171d8",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "2f0c2501-88e5-4882-bd91-78040501c7a8"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1711,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "763a19ee-c57b-46cd-9b8f-81a06ae568fd",
+          "title": "List My Events Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listmyevent-test.js",
+          "file": "\\test\\listmyevent-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list Events associated to the user id",
+              "fullTitle": "List My Events Route Testing should list Events associated to the user id",
+              "timedOut": false,
+              "duration": 1769,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let user = \"09b98fd3-a297-4459-998b-bcaf4f237549\"\nchai.request(host).get('/api/pesto/list/myevent/'+user)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Error while reteriving user\",\"Error while reteriving Events\",\"No User Found\",\"No Events Found\",\"Events Reterived\",])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "bacf42dd-f607-4716-bb03-60c1be54f711",
+              "parentUUID": "763a19ee-c57b-46cd-9b8f-81a06ae568fd",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "bacf42dd-f607-4716-bb03-60c1be54f711"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1769,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "399c1f78-f47b-47cb-8bc0-fef4ba0250f1",
+          "title": "List My Team Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listmyteam-test.js",
+          "file": "\\test\\listmyteam-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list Teams associated to the user id",
+              "fullTitle": "List My Team Route Testing should list Teams associated to the user id",
+              "timedOut": false,
+              "duration": 2229,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let user = \"09b98fd3-a297-4459-998b-bcaf4f237549\"\nchai.request(host).get('/api/pesto/list/myteam/'+user)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Error while reteriving user\",\"No User Found\",\"No Team Found\",\"Teams Found\",\"No Batch Found\",\"Error while reteriving Batch\",\"Not Applicable for Students\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "0dddca78-30f6-42da-835c-caef5414df12",
+              "parentUUID": "399c1f78-f47b-47cb-8bc0-fef4ba0250f1",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "0dddca78-30f6-42da-835c-caef5414df12"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2229,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "2529e42f-c454-439c-9d6c-9e24ceb1663f",
+          "title": "List Resource Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listresource-test.js",
+          "file": "\\test\\listresource-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list resource for events",
+              "fullTitle": "List Resource Route Testing should list resource for events",
+              "timedOut": false,
+              "duration": 1608,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let eventId = \"1ce751aa-152d-4a1c-8401-3ef77d06c720\"\nlet regex=/[0-900] Resources available for the event /\nchai.request(host).get('/api/pesto/resource/list/'+eventId)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        //res.body.should.have.property('message').to.match(regex).\n        res.body.should.have.property('message').to.contain.oneOf([\"Resources available for the event\",\"No resource available for the event\",\"Error while reteriving resource\",]);\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "5b0baf03-7df6-4779-8051-8d94b6e7f05c",
+              "parentUUID": "2529e42f-c454-439c-9d6c-9e24ceb1663f",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "5b0baf03-7df6-4779-8051-8d94b6e7f05c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1608,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "996acc27-e478-4e47-905c-3d8cdc20e7ad",
+          "title": "List students Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\liststudents-test.js",
+          "file": "\\test\\liststudents-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list students associated to the user id",
+              "fullTitle": "List students Route Testing should list students associated to the user id",
+              "timedOut": false,
+              "duration": 2263,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let user = \"09b98fd3-a297-4459-998b-bcaf4f237549\"\nlet regex=/[0-10000] users reterived/\nchai.request(host).get('/api/pesto/list/students/'+user)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"Students Reterived\",\"Not Applicable for Students\",\"No Student Found\",\"Error while reteriving Student\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "eafc83ce-a2ec-4987-a7c4-f277ac5c5b96",
+              "parentUUID": "996acc27-e478-4e47-905c-3d8cdc20e7ad",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "eafc83ce-a2ec-4987-a7c4-f277ac5c5b96"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 2263,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "eaa934d4-971c-4230-ad2d-9ba40aa315ab",
+          "title": "List Team Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listteam-test.js",
+          "file": "\\test\\listteam-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list team by its type",
+              "fullTitle": "List Team Route Testing should list team by its type",
+              "timedOut": false,
+              "duration": 1727,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let type = \"mentor\"\nlet regex=/[0-900] mentor Teams Found/\nchai.request(host).get('/api/pesto/list/team/'+type)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.match(regex)\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "781e9722-fd6b-4358-a9d2-509e037ef76c",
+              "parentUUID": "eaa934d4-971c-4230-ad2d-9ba40aa315ab",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "781e9722-fd6b-4358-a9d2-509e037ef76c"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1727,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "cf8df6d1-86b9-47b3-95ad-84bfbfa34396",
+          "title": "List User Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\listuser-test.js",
+          "file": "\\test\\listuser-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should list user by status and role",
+              "fullTitle": "List User Route Testing should list user by status and role",
+              "timedOut": false,
+              "duration": 1756,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "let status = \"approved\"\nlet role=\"mentor\"\nlet regex=/[0-900] users on approved Status/\nchai.request(host).get('/api/pesto/list/user/'+status+'/'+role)\n    .set({\"Content-Type\":\"application/json\"})\n    .set({\"Authorization\":\"Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhdXRoIjp0cnVlLCJuYW1lIjoiYXB1cnZhIHdhZGVrYXIiLCJpZCI6IjA5Yjk4ZmQzLWEyOTctNDQ1OS05OThiLWJjYWY0ZjIzNzU0OSIsInJvbGUiOiJtZW50b3IiLCJ1c2VyIjp7Il9pZCI6IjYwZjZlZTA1N2E1MTQ0MDAxYzBmNjNjZSIsIm5hbWUiOiJhcHVydmEgd2FkZWthciIsImVtYWlsIjoiYXB1cnZhLncxN0BnbWFpbC5jb20iLCJwaG9uZSI6OTYwMDk5OTA5OCwicGFzc3dvcmQiOiIkMmIkMTAkcDE5SjhBeFA4VXFjeDIxVmw1bDYuT0ZJMVRtZEFrdm9KUVM3dFNSR1ZjRmNyU29IOFhRd3EiLCJyb2xlIjoibWVudG9yIiwiZXhwZXJpZW5jZSI6Im5vdF9hcHBsaWNhYmxlIiwiYXBwcm92YWwiOiJhcHByb3ZlZCIsImlkIjoiMDliOThmZDMtYTI5Ny00NDU5LTk5OGItYmNhZjRmMjM3NTQ5IiwiX192IjowfSwiaWF0IjoxNjI3MjA3MDM2fQ.sJ5OkE9AHN8r-VeG7YsfUTRj0Usmit-IZKjsPqv5QEU\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.match(regex)\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "7e509f7e-bb4b-464b-acba-bd9b7b616d98",
+              "parentUUID": "cf8df6d1-86b9-47b3-95ad-84bfbfa34396",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "7e509f7e-bb4b-464b-acba-bd9b7b616d98"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1756,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "b44ee48b-7c58-4bcd-a26c-219c56b79c9b",
+          "title": "Login Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\login-test.js",
+          "file": "\\test\\login-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should send Login Success message",
+              "fullTitle": "Login Route Testing should send Login Success message",
+              "timedOut": false,
+              "duration": 1597,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai.request(host).post('/api/pesto/login')\n    .send({\n            \"email\":'apurva.w17@gmail.com',\n            \"password\":'Abc!23456'\n        })\n    .set({\"Content-Type\":\"application/json\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').eql(\"Login Success\");\n        res.body.should.have.property('result').be.a('string');\n        res.body.should.have.property('statusCode').eql(true);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "542aab7a-8f28-4ada-aa82-97f716af7e34",
+              "parentUUID": "b44ee48b-7c58-4bcd-a26c-219c56b79c9b",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "should send wrong username/password error",
+              "fullTitle": "Login Route Testing should send wrong username/password error",
+              "timedOut": false,
+              "duration": 1922,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai.request(host).post('/api/pesto/login')\n    .send({\n            \"email\":'apurva.w17@gmail.com',\n            \"password\":'Abc!'\n        })\n    .set({\"Content-Type\":\"application/json\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').eql(\"Wrong Username/Password\");\n        res.body.should.have.property('result');\n        res.body.should.have.property('statusCode').eql(false);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "21bf9fb0-ddbc-44c5-8a92-8055d4b9e243",
+              "parentUUID": "b44ee48b-7c58-4bcd-a26c-219c56b79c9b",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "542aab7a-8f28-4ada-aa82-97f716af7e34",
+            "21bf9fb0-ddbc-44c5-8a92-8055d4b9e243"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 3519,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        },
+        {
+          "uuid": "9a5a4c1c-227c-4419-8cc8-62df6230c699",
+          "title": "Registration Route Testing",
+          "fullFile": "D:\\projects\\pestomeet-backend\\backend\\test\\registration-test.js",
+          "file": "\\test\\registration-test.js",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "should send Registration Success message",
+              "fullTitle": "Registration Route Testing should send Registration Success message",
+              "timedOut": false,
+              "duration": 1904,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "chai.request(host).post('/api/pesto/register')\n    .send({\"name\":\"student two\",\n    \"email\":\"studenttwo@student.com\",\n    \"phone\":9600999876,\n    \"password\":\"Dummy Password\",\n    \"role\":\"student\",\n    \"experience\":\"10\",\n    \"approval\":\"In-Progress\"\n    })\n    .set({\"Content-Type\":\"application/json\"})\n    .end(function(err, res) {\n        if(err){\n            done(err)\n        }else{\n        res.should.have.status(200);\n        res.body.should.be.a('object');\n        res.body.should.have.property('message').to.be.oneOf([\"User Registered Successfully\",\"User Already Available\"])\n        res.body.should.have.property('result')\n        res.body.should.have.property('statusCode').to.be.oneOf([true,false]);\n        done();\n        }\n    });",
+              "err": {},
+              "uuid": "9be69388-de70-46ab-924a-d07d6654fa2b",
+              "parentUUID": "9a5a4c1c-227c-4419-8cc8-62df6230c699",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "9be69388-de70-46ab-924a-d07d6654fa2b"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 1904,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "9.0.3"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": false,
+        "reportFilename": "mochawesome",
+        "saveHtml": true,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.2.2"
+    },
+    "marge": {
+      "options": null,
+      "version": "5.2.0"
+    }
+  }
+}

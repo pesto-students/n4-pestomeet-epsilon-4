@@ -1,0 +1,6 @@
+import express from "express";
+import listbatchController from "../../batch/controller/listbatch-controller";
+const listbatchRouter = express.Router();
+listbatchRouter.get("/:type", listbatchController);
+export default listbatchRouter;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGlzdGJhdGNoLXJvdXRlLmpzIiwic291cmNlUm9vdCI6IiIsInNvdXJjZXMiOlsiLi4vLi4vLi4vYmF0Y2gvcm91dGVzL2xpc3RiYXRjaC1yb3V0ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLE9BQU8sTUFBTSxTQUFTLENBQUM7QUFDOUIsT0FBTyxtQkFBbUIsTUFBTSw2Q0FBNkMsQ0FBQztBQUU5RSxNQUFNLGVBQWUsR0FBRyxPQUFPLENBQUMsTUFBTSxFQUFFLENBQUM7QUFDekMsZUFBZSxDQUFDLEdBQUcsQ0FBQyxRQUFRLEVBQUUsbUJBQW1CLENBQUMsQ0FBQztBQUVuRCxlQUFlLGVBQWUsQ0FBQyJ9

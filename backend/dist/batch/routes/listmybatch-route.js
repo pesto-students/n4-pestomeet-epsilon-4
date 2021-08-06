@@ -1,0 +1,6 @@
+import express from "express";
+import listmybatchController from "../../batch/controller/listmybatch-controller";
+const listmybatchRouter = express.Router();
+listmybatchRouter.get("/:userID", listmybatchController);
+export default listmybatchRouter;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGlzdG15YmF0Y2gtcm91dGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi9iYXRjaC9yb3V0ZXMvbGlzdG15YmF0Y2gtcm91dGUudHMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBQUEsT0FBTyxPQUFPLE1BQU0sU0FBUyxDQUFDO0FBQzlCLE9BQU8scUJBQXFCLE1BQU0sK0NBQStDLENBQUM7QUFFbEYsTUFBTSxpQkFBaUIsR0FBRyxPQUFPLENBQUMsTUFBTSxFQUFFLENBQUM7QUFDM0MsaUJBQWlCLENBQUMsR0FBRyxDQUFDLFVBQVUsRUFBRSxxQkFBcUIsQ0FBQyxDQUFDO0FBRXpELGVBQWUsaUJBQWlCLENBQUMifQ==

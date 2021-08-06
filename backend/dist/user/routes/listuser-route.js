@@ -1,0 +1,6 @@
+import express from "express";
+import listController from "../controller/listuser-controller";
+const listRouter = express.Router();
+listRouter.get("/:status/:role", listController);
+export default listRouter;
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoibGlzdHVzZXItcm91dGUuanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyIuLi8uLi8uLi91c2VyL3JvdXRlcy9saXN0dXNlci1yb3V0ZS50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiQUFBQSxPQUFPLE9BQU8sTUFBTSxTQUFTLENBQUM7QUFDOUIsT0FBTyxjQUFjLE1BQU0sbUNBQW1DLENBQUM7QUFFL0QsTUFBTSxVQUFVLEdBQUcsT0FBTyxDQUFDLE1BQU0sRUFBRSxDQUFDO0FBQ3BDLFVBQVUsQ0FBQyxHQUFHLENBQUMsZ0JBQWdCLEVBQUUsY0FBYyxDQUFDLENBQUM7QUFFakQsZUFBZSxVQUFVLENBQUMifQ==
