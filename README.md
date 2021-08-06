@@ -25,14 +25,14 @@ Your system must have Node v10.16.3+.
 
 - Frontend
 
-1. Clone - ``
+1. Clone - `https://github.com/pesto-students/n4-pestomeet-epsilon-4.git`
 2. Install required packages using - `npm i`
 3. Run Application : `npm run start`
 4. Run Test Cases: `npm run cypress:open`
 
 - Backend
 
-1. Clone - ``
+1. Clone - `https://github.com/pesto-students/n4-pestomeet-epsilon-4.git`
 2. Install required packages using - `npm i`
 3. Run Application : `npm start`
 4. Run Test Cases: `npm test`
